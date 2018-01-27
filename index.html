@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <title>Staticli</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+    <a class="navbar-brand" href="/">Staticli</a>
+    <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+        <li class="nav-item"><a href="https://github.com/staticli/staticli" class="nav-link p-2">Github</a></li>
+        <li class="nav-item"><a href="https://bintray.com/staticli/staticli/staticli/_latestVersion"
+                                class="nav-link p-2">Download</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <p>A CLI tool for working with static site generators.
+
+    <p>This application provides a number of tools related to static site generation, all running in docker containers
+        from a single binary file. Rather than go through the hassle of installing Ruby, rake, bundler, jekyll, python,
+        proselint, gulp, etc. you only need the one single binary file and to have docker installed.
+    </p>
+
+    <h2>Installation</h2>
+    <ol>
+        <li>Install Docker (<code>brew cask install docker</code> on MacOS)</li>
+        <li>Download the <a href="https://bintray.com/staticli/staticli/staticli/_latestVersion">correct binary</a> for
+            your operating system and move it into your <code>$PATH</code> as <code>staticli</code></li>
+    </ol>
+
+    <h2>Tools</h2>
+    <p>Staticli provides the following tools without any need for complicated installation processes on Windows, Linux or MacOS because these all run in docker containers.</p>
+    <ul>
+        <li>Gulp</li>
+        <li>Proselint</li>
+        <li>Python SimpleHTTPServer (coming soon)</li>
+        <li>Rake</li>
+        <li>Surge</li>
+    </ul>
+
+    <h2>Usage</h2>
+    <p>From this one single binary you can now run rake tasks to preview and validate Jekyll blogs, run proselint to
+        check for best practises in writing, and run gulp to turn sass into css. All of this happens inside docker
+        containers, so you don't actually need to install any extra tooling. You will need an internet connection the
+        first time you run each subcommand in order to download the container though.</p>
+
+    <p><code>staticli rake</code> - runs <code>bundle install --path=_vendor && bundle exec rake $@</code> in the
+        current directory. Assuming
+        this is a Jekyll site with a default rake task of previewing the site, you can now open a browser and view the
+        site
+        at <a href="http://127.0.0.1:4000">http://127.0.0.1:4000</a>. If you're already using port 4000 you can add
+        <code>-p 2000</code> to change to port 2000 (or any
+        port)</p>
+
+    <p><code>staticli proselint README.md</code> runs proselint against the file README.md to check for best practises in writing.</p>
+
+    <p><code>staticli gulp</code> runs the gulp watch task. You can add <code>-t foo</code> to run the foo task instead.</p>
+
+    <p><a href="https://bintray.com/staticli/staticli/staticli/_latestVersion"><img src="https://api.bintray.com/packages/staticli/staticli/staticli/images/download.svg"</a></p>
+
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
